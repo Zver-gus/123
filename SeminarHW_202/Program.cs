@@ -1,4 +1,4 @@
-﻿int n = new Random().Next(1, 655);
+﻿int n = new Random().Next(1, 655536);
 Console.WriteLine(n);
 
 if (n < 100)
