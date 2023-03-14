@@ -27,10 +27,16 @@ int[,] arr2 = new int[,] { {3, 4},
 
 int[,] multiplication (int[,] arr1, int[,] arr2)
 {
-    int[,] res = new int[arr1.GetLength(0), arr1.GetLength(1)];
+    int[,] res = new int[arr1.GetLength(0), arr2.GetLength(1)];
     for (int row = 0; row < arr1.GetLength(0); row++)
-        for (int col = 0; col < arr1.GetLength(1); col++)
-            res[row, col] = arr1[row, col] + arr2[row, col];
+        for (int col = 0; col < arr2.GetLength(1); col++)
+        {
+            res[row, col] = 0;
+            for (int k = 0; k < arr1.GetLength(1); k++)
+            {
+                res[row, col] += arr1[row, k] * arr2[k, col];
+            }
+        }
     return res;
 }
 
