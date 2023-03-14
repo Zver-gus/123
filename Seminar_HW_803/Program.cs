@@ -25,13 +25,15 @@ int[,] arr1 = new int[,] { {2, 4},
 int[,] arr2 = new int[,] { {3, 4},
                            {3, 3} };
 
-
-int[,] multiplication = new int[arr1.GetLength(0), arr1.GetLength(1)];
-for (int i = 0; i < arr1.GetLength(0); i++)
+int[,] multiplication (int[,] arr1, int[,] arr2)
 {
-    for (int j = 0; j < arr2.GetLength(1); j++)
-        for (int k = 0; k < arr1.GetLength(0); k++)
-            multiplication[i, j] = (arr1[i, k] * arr2[i, k]) + (arr1[i + 1, j] * arr2[i, j + 1]);
+    int[,] res = new int[arr1.GetLength(0), arr1.GetLength(1)];
+    for (int row = 0; row < arr1.GetLength(0); row++)
+        for (int col = 0; col < arr1.GetLength(1); col++)
+            res[row, col] = arr1[row, col] + arr2[row, col];
+    return res;
 }
 
-PrintArray2(multiplication);
+int[,] res = multiplication(arr1, arr2);
+
+PrintArray2(res);
