@@ -10,9 +10,10 @@
 
 // void FillArray(int [,] matr)
 // {
+//     Random rnd = new Random();
 //     for (int i = 0; i < matr.GetLength(0); i++)
 //         for (int j = 0; j < matr.GetLength(1); j++)
-//             matr[i, j] = new Random().Next(1,10);
+//             matr[i, j] = rnd.Next(1,10);
 // }
 
 /* void PrintImage(int [,] image)
@@ -47,7 +48,7 @@ int PrintNaturalNumb (int num1)
     {
         int m = PrintNaturalNumb(num1 - 1);
         Console.WriteLine(m);
-        return num - 1;
+        return num1 - 1;
     }
 }
 
