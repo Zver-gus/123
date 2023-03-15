@@ -42,14 +42,14 @@ void FillImage (int row, int col)
 
 int PrintNaturalNumb (int num1)
 {
-    if (num1 == 1)
-        return 1;
-    else 
+    if (num1 > 0)
     {
-        int m = PrintNaturalNumb(num1 - 1);
-        Console.WriteLine(m);
+        Console.WriteLine(num1);
+        num1 = PrintNaturalNumb(num1 - 1);
         return num1 - 1;
     }
+    else 
+        return 0;
 }
 
-Console.WriteLine(PrintNaturalNumb(7));
+PrintNaturalNumb(9);
